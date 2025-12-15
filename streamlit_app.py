@@ -258,13 +258,10 @@ def _hist(x, title, color, range_x=None):
         plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)"
     )
 
-mag_series = pd.to_numeric(df["magnitude"], errors="coerce").dropna()
-if not mag_series.empty:
-    mag_min, mag_max = float(mag_series.min()), float(mag_series.max())
-    if mag_min == mag_max:
-        mag_min, mag_max = mag_min - 1.0, mag_max + 1.0
-else:
-    mag_min, mag_max = 0.0, 6.0
+
+# Escala fija de magnitudes según la escala de Richter definida:
+# micro: <2, menor: 2-3.9, ligero: 4-4.9, moderado: 5-5.9, fuerte: 6-6.9, mayor: 7-7.9, épico: 8-9.9, legendario: 10+
+mag_min, mag_max = 0.0, 10.0
 
 fig_mag = _hist("magnitude", "Histograma de Magnitudes", "crimson", range_x=(mag_min, mag_max))
 fig_depth = _hist("depth_km", "Histograma de Profundidades", "darkred")
