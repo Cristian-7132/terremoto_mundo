@@ -1,19 +1,11 @@
-# 🎈 Blank app template
+# Datos en Tiempo Real de los Terremotos en Puerto Rico y en el Mundo
 
-A simple Streamlit app template for you to modify!
+La app muestra datos de terremotos en tiempo real (obtenidos con `quakefeeds`) con una vista global y de Puerto Rico. Se puede filtrar por severidad, periodo y zona geográfica, se pueden ver los histogramas de magnitud y profundidad, y se visualizan los eventos en un mapa en el que puedes interactuar, donde cada punto muestra la magnitud, profundidad y clasificación.
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+Características principales
+- Filtros: severidad, periodo (mes/semana/día) y zona (Puerto Rico / Mundo).
+- Visualizaciones: mapa interactivo (`plotly`), histogramas y tabla de eventos (opcional y configurable).
+- Clasificación de magnitudes en categorías legibles (micro, menor, ligero, etc.).
 
-### How to run it on your own machine
-
-1. Install the requirements
-
-   ```
-   $ pip install -r requirements.txt
-   ```
-
-2. Run the app
-
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+Autor
+- Cristian Santell — INGE3016 — Universidad de Puerto Rico, Recinto de Humacao
